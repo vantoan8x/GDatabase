@@ -1,0 +1,79 @@
+This is the new Database, based on C Language
+
+Preface
+There were some first function on the database
+
+- Key-Value Database free structure for a record.
+- Transaction feature.
+- Stored Procedure feature.
+- Versioned Document.
+
+- Cluster and Mirror feature (Like RAID Methodology).
+- Backup and Restore Automatically feature.
+- Load Balancing.
+
+- CRUD Hook feature for every interract with database.
+- Encrypt/Decrupt data record/document.
+
+
+Concept
+GDatabase is same as other Key-Value NoSQL database.
+- Document: is a record of data, it save as a single file.
+- Collection: is a group and many Document, it can be link Cross Database
+- Database: is a group many collection, it can be Link Cross Location
+
+- Key is a name of Value in Document, value-type of key can be as:
+  - Index: is an unique number to all Database.
+  - String: UTF8 String.
+  - Date: ISO Date.
+  - Number: Double type, a floating word of AUL.
+  - Int: Integer type 64 bit, a word od CPU register.
+  - Object: SubObject for Link-Level Object.
+  - Array: SubObject for Link-Level Array.
+  - Ref: Reference object to another Collection.
+    {
+      database: String,
+      collection: String,
+      key: String
+    }
+  - Default Keys:
+    - _id
+    - createdAt
+    - ModifiedAt
+    - Version
+
+
+Operator
+- Find
+  - FindOne, at First, at Last
+  - FindMany
+  - Key-Value query type.
+  - Associated Query Action (Update, Delete)
+- GetAll
+- Populate
+- Create
+- Update
+  - Update One
+  - Update Many
+- Delete
+  - Delete One
+  - Delete Many
+
+  - Transaction
+    - Start
+    - Tag
+    - Finish
+    - Rollback
+
+- Version
+  - Tag
+  - Rollback
+
+
+Optimize Method
+- Key is all the 64 Int number, Quick Compare, Search, Insert, Update,... It will maped to Name-String before return to customer
+- Populate will return an Array Key-value isolated with _id, client call function to lookup
+- Random list of number to use, do not randomize when need, do it when start app.
+- Load cache file in memory, reduce bottle-neck throtling.
+- 
+
